@@ -13,10 +13,12 @@
   ],
   "shoes": [
     {
-      "id": "100",
-      "color": "red",
-      "size": "46",
-      "brand": "Adidas"
+      "size": 22,
+      "brand": "Vike",
+      "color": "Red",
+      "price": "19.99",
+      "img": "",
+      "id": "hd_0iv1DokM"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

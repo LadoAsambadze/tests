@@ -1,50 +1,37 @@
-export default function Shoes() {
-  const data = [
-    { size: 47, brand: "Nike", color: "Gray", price: "49.99", img: "" },
-    { size: 48, brand: "Adidas", color: "Yellow", price: "49.99", img: "" },
-    { size: 48, brand: "AZDIADI", color: "Yellow", price: "49.99", img: "" },
-  ];
+import { useState } from "react";
 
+export default function Shoes() {
+  const [data, setData] = useState();
+
+  async function GetData() {
+    const res = await fetch("http://localhost:3001/shoes");
+    const json = await res.json();
+    setData(json);
+  }
+
+  async function SendData() {
+    const response = await fetch("http://localhost:3001/shoes", {
+      method: "POST",
+      body: JSON.stringify({
+        size: "22",
+        brand: "Vike",
+        color: "Red",
+        price: "19.99",
+        img: "",
+      }),
+    });
+  }
+
+  async function DeleteData() {
+    const response = await fetch("http://localhost:3001/shoes/s29rF9CW5_s", {
+      method: "DELETE",
+    });
+  }
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      {data.map((item, index) => (
-        <div
-          key={index}
-          className="w-[320px] bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
-        >
-          <img
-            className="w-full h-56 object-cover"
-            src="/image.png"
-            alt="Nike shoes"
-          />
-
-          <div className="p-5">
-            <h2 className="text-2xl font-bold mb-3">Nike Shoes</h2>
-
-            <div className="flex flex-col gap-2 text-gray-600">
-              <p>
-                <span className="font-semibold text-black">Brand:</span> Nike
-              </p>
-
-              <p>
-                <span className="font-semibold text-black">Color:</span> Gray
-              </p>
-
-              <p>
-                <span className="font-semibold text-black">Size:</span> 47
-              </p>
-            </div>
-
-            <div className="flex justify-between items-center mt-5">
-              <span className="text-2xl font-bold text-green-600">$1000</span>
-
-              <button className="bg-black text-white px-4 py-2 rounded-lg hover:opacity-80 transition">
-                Buy Now
-              </button>
-            </div>
-          </div>
-        </div>
-      ))}
+      <button onClick={GetData}>Get Data</button>
+      <button onClick={SendData}>Send Data</button>
+      <button onClick={DeleteData}>Delete Data</button>
     </div>
   );
 }
