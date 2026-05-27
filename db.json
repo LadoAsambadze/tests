@@ -13,12 +13,12 @@
   ],
   "shoes": [
     {
-      "size": 22,
-      "brand": "Vike",
-      "color": "Red",
-      "price": "19.99",
-      "img": "",
-      "id": "hd_0iv1DokM"
+      "size": "",
+      "brand": "",
+      "color": "",
+      "price": "",
+      "image": "",
+      "id": "9Wg0zXbHcjk"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
