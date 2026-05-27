@@ -5,7 +5,10 @@ import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import Shoes from "./pages/Shoes";
 import AddShoes from "./pages/AddShoes";
- 
+import ProtectedRoute from "./provider/ProtectedRoute";
+
+
+
 function App() {
   return (
     <>
@@ -16,7 +19,14 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/shoes" element={<Shoes />} />
-          <Route path="/add-shoes" element={<AddShoes />} />
+          <Route
+            path="/add-shoes"
+            element={
+              <ProtectedRoute>
+                <AddShoes />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </>

@@ -13,6 +13,7 @@ export default function Signin() {
         item.username === state.username && item.password === state.password,
     );
     if (user) {
+      localStorage.setItem("token1", "key123");
       navigate("/");
     } else {
       alert("Invalid username or password");
