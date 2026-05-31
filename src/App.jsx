@@ -6,26 +6,19 @@ import Signup from "./pages/Signup";
 import Shoes from "./pages/Shoes";
 import AddShoes from "./pages/AddShoes";
 import ProtectedRoute from "./provider/ProtectedRoute";
+import Private from "./pages/Private";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Contact />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/shoes" element={<Shoes />} />
-          <Route
-            path="/add-shoes"
-            element={
-              <ProtectedRoute>
-                <AddShoes />
-              </ProtectedRoute>
-            }
-          />
+          <Route path="/private" element={<Private />} />
         </Routes>
       </BrowserRouter>
     </>
