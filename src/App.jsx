@@ -7,12 +7,11 @@ import Shoes from "./pages/Shoes";
 import AddShoes from "./pages/AddShoes";
 import ProtectedRoute from "./provider/ProtectedRoute";
 
-
-
 function App() {
   return (
     <>
       <BrowserRouter>
+        <Contact />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/signin" element={<Signin />} />
