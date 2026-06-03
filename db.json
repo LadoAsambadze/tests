@@ -3,11 +3,11 @@
     {
       "id": "1",
       "username": "admin",
-      "password": "12345"
+      "password": "123"
     },
     {
-      "username": "Lado",
-      "password": "123456",
+      "username": "Koba",
+      "password": "Koba123",
       "id": "XDzZyovN1bQ"
     }
   ],
@@ -19,6 +19,14 @@
       "price": "",
       "image": "",
       "id": "9Wg0zXbHcjk"
+    },
+    {
+      "size": "22",
+      "brand": "Vike",
+      "color": "Red",
+      "price": "19.99",
+      "img": "",
+      "id": "PrZotnKZLak"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

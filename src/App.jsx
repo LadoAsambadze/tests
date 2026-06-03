@@ -1,27 +1,21 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Main from "./pages/Main";
 import Contact from "./pages/Contact";
-import Signin from "./pages/Signin";
-import Signup from "./pages/Signup";
-import Shoes from "./pages/Shoes";
-import AddShoes from "./pages/AddShoes";
-import ProtectedRoute from "./provider/ProtectedRoute";
-import Private from "./pages/Private";
+import About from "./pages/About";
+import Products from "./pages/Products";
+import Navbar from "./components/NavBar";
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/signin" element={<Signin />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/shoes" element={<Shoes />} />
-          <Route path="/private" element={<Private />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/products" element={<Products />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
